@@ -29,6 +29,10 @@
     --section-gap: 120px;
     /* padding 72 */
     --uni-padding: 72px;
+    /* cubic-bezier */
+    --cubic: cubic-bezier(0.4, 0, 0.2, 1).;
+    /* time */
+    --time: 250ms;
 }
 
 body {
@@ -129,21 +133,46 @@ ul {
 .site-nav {
     display: flex;
     margin-left: 76px;
+
 }
 
-.site-nav .nav {
+.nav {
+    position: relative;
+    display: block;
+
     color: var(--dark);
     font-weight: 500;
-    display: block;
+
     padding-top: var(--uni-gap);
     padding-bottom: var(--uni-gap);
 
+    transition-property: color;
+    transition-duration: var(--time);
+    transition-timing-function: var(--cubic);
 }
 
-.site-nav .nav:hover,
-.site-nav .nav:focus {
+.nav:hover,
+.nav:focus {
     color: var(--primary-brand-color);
 }
+
+.nav.active {
+    color: var(--primary-brand-color);
+}
+
+.nav.active::after {
+    content: '';
+    position: absolute;
+
+    left: 0px;
+    bottom: -1px;
+
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-brand-color);
+    border-radius: 2px;
+}
+
 
 .site-nav .item+.item,
 .header-address .item+.item {
@@ -162,6 +191,10 @@ ul {
     padding-top: var(--uni-gap);
     padding-bottom: var(--uni-gap);
     margin-left: 3px;
+
+    transition-property: color;
+    transition-duration: var(--time);
+    transition-timing-function: var(--cubic);
 }
 
 .header-address .info:hover,
@@ -198,6 +231,10 @@ ul {
     margin-top: 48px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+
+    transition-property: background-color;
+    transition-duration: var(--time);
+    transition-timing-function: var(--cubic);
 }
 
 .order:hover,
@@ -316,6 +353,10 @@ ul {
     padding: 12px;
     background-color: var(--primary-brand-color);
     border-radius: 50%;
+
+    transition-property: background-color;
+    transition-duration: var(--time);
+    transition-timing-function: var(--cubic);
 }
 
 .team-icon:hover,
@@ -349,6 +390,10 @@ ul {
     border-radius: 4px;
     padding: 16px 31px;
     color: var(--light-slate);
+
+    transition-property: color, border-color;
+    transition-duration: var(--time);
+    transition-timing-function: var(--cubic);
 }
 
 .client-item:hover,
@@ -403,6 +448,10 @@ ul {
     padding: 8px;
     background-color: var(--body-text-color);
     border-radius: 50%;
+
+    transition-property: background-color;
+    transition-duration: var(--time);
+    transition-timing-function: var(--cubic);
 }
 
 .foot-icon:hover,
@@ -435,6 +484,10 @@ ul {
     background-color: var(--Accent);
     border-radius: 4px;
     padding: 12px 24px;
+
+    transition-property: color, backgound-color, box-shadow, border-radius;
+    transition-duration: var(--time);
+    transition-timing-function: var(--cubic);
 }
 
 .filter .button-hover {
@@ -460,7 +513,15 @@ ul {
     flex-wrap: wrap;
     row-gap: 48px;
     column-gap: var(--uni-gap);
+    box-shadow: none;
 }
+
+.cards-block {
+    transition-property: box-shadow;
+    transition-duration: var(--time);
+    transition-timing-function: var(--cubic);
+}
+
 
 .cards-block:hover,
 .cards-block:focus {
