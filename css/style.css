@@ -505,11 +505,10 @@ ul {
     transition-timing-function: var(--cubic);
 }
 
-.cards-block:hover .thumb-wrap:hover::before {
+.cards-block:hover .thumb-wrap::before {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 .card-thumbs {
     display: block;
