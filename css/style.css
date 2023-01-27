@@ -505,11 +505,11 @@ ul {
     transition-timing-function: var(--cubic);
 }
 
-.thumb-wrap:hover::before,
-.thumb-wrap:focus::before {
+.cards-block:hover .thumb-wrap:hover::before {
     opacity: 1;
     transform: translateY(0);
 }
+
 
 .card-thumbs {
     display: block;
@@ -601,11 +601,18 @@ ul {
     width: 100%;
     height: 100%;
     background: rgba(46, 47, 66, 0.4);
+
+    opacity: 1;
+    transform: scale3d(1);
+    transition-property: opacity, scale;
+    transition-duration: var(--time);
+    transition-timing-function: var(--cubic);
 }
 
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
+    transform: scale3d(0.8);
 }
 
 .modal {
