@@ -505,7 +505,8 @@ ul {
     transition-timing-function: var(--cubic);
 }
 
-.cards-block:hover .thumb-wrap::before {
+.cards-block:hover .thumb-wrap::before,
+.cards-block:focus .thumb-wrap::before {
     opacity: 1;
     transform: translateY(0);
 }
